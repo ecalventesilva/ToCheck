@@ -70,6 +70,8 @@
         android:layout_height="25dp"
         android:layout_marginBottom="116dp"
         android:text="No estas registrado registrate"
+        android:onClick="registro"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
