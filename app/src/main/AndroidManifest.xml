@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".InicioAdmin"></activity>
+        <activity android:name=".PrimeraPantallaAdmin"></activity>
+        <activity android:name=".PrimeraPantallaUsuario" />
+        <activity android:name=".InicioAdmin" />
         <activity android:name=".InicioUsuario" />
         <activity android:name=".SegundaPantalla" />
         <activity android:name=".MainActivity">
