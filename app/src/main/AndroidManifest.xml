@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegistroUsuario"></activity>
+        <activity android:name=".PantallaQR"></activity>
+        <activity android:name=".RegistroUsuario" />
         <activity android:name=".PrimeraPantallaAdmin" />
         <activity android:name=".PrimeraPantallaUsuario" />
         <activity android:name=".InicioAdmin" />
         <activity android:name=".InicioUsuario" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/SplashTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
 

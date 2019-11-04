@@ -12,6 +12,7 @@
         android:layout_height="51dp"
         android:layout_marginBottom="24dp"
         android:text="QR"
+        android:onClick="pantallaQR"
         app:layout_constraintBottom_toTopOf="@+id/buttonTrabajadoresActivos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
