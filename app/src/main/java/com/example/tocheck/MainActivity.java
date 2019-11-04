@@ -23,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent= new Intent(this,InicioUsuario.class);
         this.startActivity(intent);
     }
+
+    public void accederAdmin(View view) {
+        Intent intent= new Intent(this,InicioAdmin.class);
+        this.startActivity(intent);
+    }
 }

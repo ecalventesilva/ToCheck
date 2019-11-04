@@ -14,8 +14,13 @@ public class InicioUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_inicio_usuario);
     }
 
+
     public void pasarPantallaPrimeraUsuario(View view) {
-        Intent intent= new Intent(this,PrimeraPantallaUsuario.class);
+        Intent intent = new Intent(this, PrimeraPantallaUsuario.class);
+    }
+    public void registro(View view) {
+        Intent intent= new Intent(this,RegistroUsuario .class);
+
         this.startActivity(intent);
     }
 }
