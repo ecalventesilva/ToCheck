@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class SegundaPantalla extends AppCompatActivity {
+public class RegistroUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_segunda_pantalla);
+        setContentView(R.layout.activity_registro_usuario);
     }
 }
