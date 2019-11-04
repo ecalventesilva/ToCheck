@@ -17,6 +17,7 @@ public class InicioUsuario extends AppCompatActivity {
 
     public void pasarPantallaPrimeraUsuario(View view) {
         Intent intent = new Intent(this, PrimeraPantallaUsuario.class);
+        this.startActivity(intent);
     }
     public void registro(View view) {
         Intent intent= new Intent(this,RegistroUsuario .class);
