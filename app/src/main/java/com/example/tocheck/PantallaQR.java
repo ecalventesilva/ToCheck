@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -41,6 +42,9 @@ public class PantallaQR extends AppCompatActivity {
     }
 
     private void generarQRCode() {
+        if(editText.getText().length()==0) {
+            Toast.makeText(this, "Por favor, introduzca una clave para generar el QR", Toast.LENGTH_LONG).show();
+        }else{
         String texto= editText.getText().toString();
         MultiFormatWriter multiFormatWriter =new MultiFormatWriter();
 
@@ -51,7 +55,7 @@ public class PantallaQR extends AppCompatActivity {
             imagenQR.setImageBitmap(bitmap);
         }catch (WriterException e){
             e.printStackTrace();
-        }
+        }}
     }
 
     private void iniciarComponentes() {
