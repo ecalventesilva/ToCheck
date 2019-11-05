@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorBlanco"
     tools:context=".MainActivity">
 
     <ImageView
@@ -15,15 +15,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logopng" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="accederUsuario"
         android:layout_marginTop="88dp"
+        android:background="@color/colorPrimary"
+        android:onClick="accederUsuario"
         android:text="Usuario"
+        android:textColor="@color/colorBlanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -34,6 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:onClick="accederAdmin"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorBlanco"
         android:text="Admin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
