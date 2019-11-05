@@ -8,13 +8,35 @@
     tools:context=".PantallaQR">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonGenerarQR"
         android:layout_width="216dp"
         android:layout_height="57dp"
         android:layout_marginTop="212dp"
         android:text="GENERAR QR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagenQR"
+        android:layout_width="302dp"
+        android:layout_height="296dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonGenerarQR" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="30dp"
+        android:hint="Introduzca una palabra clave"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGenerarQR"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
