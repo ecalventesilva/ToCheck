@@ -14,6 +14,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/botonredondo"
         android:text="QR"
+        android:onClick="botonEscanear"
         android:textColor="@color/colorBlanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
