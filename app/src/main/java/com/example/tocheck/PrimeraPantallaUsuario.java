@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
@@ -25,6 +26,7 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
     private ZXingScannerView miScannerView;
     private static final int SOLICITUD_PERMISO_CAMARA=1;
     private Intent intentCamara;
+    private static final int RESULT_CODE_OPEN=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,5 +66,17 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
         alertDialog.show();
 
         miScannerView.resumeCameraPreview(this);
+    }
+
+    public void IrPantallaCalendario(View view) {
+       // Intent PAgenda =new Intent(this,PantallaCalendario.class);
+        //this.startActivity(PAgenda);
+        long calendarId = 1234; // here goes your calendar Id
+
+        final Intent calIntent = new Intent(Intent.ACTION_EDIT)
+                .setType("vnd.android.cursor.item/event")
+                .putExtra(CalendarContract.Events.CALENDAR_ID, calendarId);
+
+        startActivityForResult(calIntent, RESULT_CODE_OPEN);
     }
 }
