@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ToCheck</string>
+    <string name="title_activity_mapa">Map</string>
+    <string name="botonMapa">Mapa empleados</string>
 </resources>

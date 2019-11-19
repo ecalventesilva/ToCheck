@@ -8,25 +8,37 @@
     tools:context=".PrimeraPantallaAdmin">
 
     <Button
+        android:id="@+id/buttonMapaEmpleados"
+        android:layout_width="298dp"
+        android:layout_height="51dp"
+        android:text="@string/botonMapa"
+        android:onClick="pantallaMapa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTrabajadoresActivos" />
+
+    <Button
         android:id="@+id/buttonQRAdmin"
         android:layout_width="298dp"
         android:layout_height="51dp"
-        android:layout_marginBottom="24dp"
-        android:text="QR"
         android:onClick="pantallaQR"
+        android:text="QR"
         app:layout_constraintBottom_toTopOf="@+id/buttonTrabajadoresActivos"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonTrabajadoresActivos"
         android:layout_width="298dp"
         android:layout_height="51dp"
-        android:layout_marginBottom="444dp"
         android:text="Trabajadores Activos"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMapaEmpleados"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonQRAdmin" />
 </androidx.constraintlayout.widget.ConstraintLayout>

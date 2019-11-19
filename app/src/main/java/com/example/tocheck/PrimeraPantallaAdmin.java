@@ -18,4 +18,9 @@ public class PrimeraPantallaAdmin extends AppCompatActivity {
         Intent intent = new Intent(this, PantallaQR.class);
         this.startActivity(intent);
     }
+
+    public void pantallaMapa(View view) {
+        Intent intent = new Intent(this, Mapa.class);
+        this.startActivity(intent);
+    }
 }
