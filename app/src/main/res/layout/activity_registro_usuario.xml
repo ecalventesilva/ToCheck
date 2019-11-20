@@ -28,7 +28,7 @@
         android:layout_marginTop="28dp"
         android:text="DNI"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
 
     <TextView
         android:id="@+id/textViewContraseña"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewNombre" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewEmail"
         android:layout_width="126dp"
         android:layout_height="25dp"
         android:layout_marginStart="40dp"
@@ -115,7 +115,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.562"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/textViewEmail"
         app:layout_constraintTop_toBottomOf="@+id/editTextRPassword" />
 
     <Button
