@@ -12,7 +12,9 @@
         android:layout_width="216dp"
         android:layout_height="57dp"
         android:layout_marginTop="212dp"
+        android:backgroundTint="@color/colorPrimary"
         android:text="GENERAR QR"
+        android:textColor="@color/colorBlanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonGenerarQR" />
 
     <EditText
-        android:id="@+id/editTextPalabra"
+        android:id="@+id/editText3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
