@@ -71,7 +71,7 @@ public class PantallaQR extends AppCompatActivity {
     }
 
     private void iniciarComponentes() {
-        editText=(EditText) findViewById(R.id.editText3);
+        editText=(EditText) findViewById(R.id.editTextPalabra);
         buttonGenerarQR=(Button) findViewById(R.id.buttonGenerarQR);
         imagenQR=(ImageView) findViewById(R.id.imagenQR);
 
