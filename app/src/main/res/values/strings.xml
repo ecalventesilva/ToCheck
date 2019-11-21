@@ -2,4 +2,6 @@
     <string name="app_name">ToCheck</string>
     <string name="title_activity_mapa">Map</string>
     <string name="botonMapa">Mapa empleados</string>
+    <string name="fondoOscuroActivado">Fondo oscuro</string>
+    <string name="pantallaPreferencias">Pantalla Preferencias</string>
 </resources>
