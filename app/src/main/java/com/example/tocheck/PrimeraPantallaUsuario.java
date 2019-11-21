@@ -27,6 +27,7 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
     private static final int SOLICITUD_PERMISO_CAMARA=1;
     private Intent intentCamara;
     private static final int RESULT_CODE_OPEN=1;
+    private String[] permisos={CAMERA};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,7 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
 
     public void botonEscanear(View view) {
 
-         //IMPLEMENTAR CORRECTAMENTE PERMISOS DE LLAMADA
+         //IMPLEMENTAR CORRECTAMENTE PERMISOS DE CAMARA
 
         if(ActivityCompat.checkSelfPermission(this,CAMERA)== PackageManager.PERMISSION_GRANTED){
 
@@ -48,10 +49,10 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
 
         }else{
             if(ActivityCompat.shouldShowRequestPermissionRationale(this, CAMERA)){
-                String[] permisos={CAMERA};
                 ActivityCompat.requestPermissions(this,permisos,SOLICITUD_PERMISO_CAMARA);
             }else{
                 Toast.makeText(this,"Permiso denegado, por favor active los permisos de cámara",Toast.LENGTH_LONG).show();
+                ActivityCompat.requestPermissions(this,permisos,SOLICITUD_PERMISO_CAMARA);
             }
         }
     }
