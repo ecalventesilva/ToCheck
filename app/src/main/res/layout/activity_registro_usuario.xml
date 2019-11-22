@@ -40,6 +40,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -48,35 +49,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
-                android:text="Nombre" />
+                android:text="Nombre"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
-                android:text="Contraseña" />
+                android:text="Contraseña"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewRContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
-                android:text="Repetir Contraseña" />
+                android:text="Repetir Contraseña"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
-                android:text="Email" />
+                android:text="Email"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewDni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="25dp"
-                android:text="DNI" />
+                android:text="DNI"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
