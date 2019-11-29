@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "193045467750",
+    "firebase_url": "https://tocheck-50af4.firebaseio.com",
+    "project_id": "tocheck-50af4",
+    "storage_bucket": "tocheck-50af4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193045467750:android:7bfb4c915e71e26345d3a7",
+        "android_client_info": {
+          "package_name": "com.example.tocheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193045467750-se0i3vtaocr4lvkpfdpf5mgl4aavn58v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tocheck",
+            "certificate_hash": "f866f7d155873c7ea4151352ccfe5d2956f3138a"
+          }
+        },
+        {
+          "client_id": "193045467750-qedj6b6cg1n957mtbbkf0d623c21pvjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7BE3tDd12Z0zy7Ud-hpPf8C_Nix_KOUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193045467750-qedj6b6cg1n957mtbbkf0d623c21pvjq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
