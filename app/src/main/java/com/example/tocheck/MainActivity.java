@@ -47,4 +47,10 @@ public class MainActivity extends AppCompatActivity {
             preferencias.setBackgroundResource(R.color.colorSecundary);
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
 }
