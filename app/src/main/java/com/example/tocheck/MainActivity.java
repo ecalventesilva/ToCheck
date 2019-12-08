@@ -9,18 +9,13 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button preferencias;
-
+   // private Button preferencias;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        preferencias=findViewById(R.id.button2);
-
-
-
+        //preferencias=findViewById(R.id.button2);
 
     }
 
@@ -39,18 +34,6 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(intent);
 
     }
-    public void cambiarFondo(Boolean valor){
-        if(valor){
-            preferencias.setBackgroundResource(R.color.colorBlanco);
 
-        }else{
-            preferencias.setBackgroundResource(R.color.colorSecundary);
-        }
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-    }
 }
