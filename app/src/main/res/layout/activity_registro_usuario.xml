@@ -22,6 +22,7 @@
         android:layout_height="49dp"
         android:layout_marginBottom="64dp"
         android:text="Registrar"
+        android:onClick="buttonRegistrar"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorBlanco"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,18 +94,18 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editTextRPassword"
+                android:id="@+id/editTextNombre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editTextNombre"
+                android:id="@+id/editTextPass"
                 android:layout_width="wrap_content"
-                android:layout_height="43dp"
+                android:layout_height="33dp"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPassword" />
 
             <EditText
                 android:id="@+id/editTextPassword"
@@ -126,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textEmailAddress" />
+
         </LinearLayout>
     </LinearLayout>
 

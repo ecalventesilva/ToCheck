@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,6 +21,7 @@ public class InicioUsuario extends AppCompatActivity {
     private EditText editTextUsuario;
     private EditText editTextPassword;
     private Button buttonLogin;
+    private TextView textViewRegistro;
 
     private String usuario="";
     private String password="";
@@ -33,10 +35,11 @@ public class InicioUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_inicio_usuario);
 
         editTextUsuario=(EditText) findViewById(R.id.editTextPassword);
-        editTextPassword=(EditText) findViewById(R.id.editTextUsuario);
+        editTextPassword=(EditText) findViewById(R.id.editTextPassword);
         buttonLogin=(Button) findViewById(R.id.buttonLogin);
+        textViewRegistro=(TextView) findViewById(R.id.textViewRegistro);
 
-
+        mAuth= FirebaseAuth.getInstance();
     }
     public void pasarPantallaPrimeraUsuario(View view) {
         usuario=editTextUsuario.getText().toString();
@@ -65,8 +68,9 @@ public class InicioUsuario extends AppCompatActivity {
     }
 
 
-    public void registro(View view) {
-        Intent intent= new Intent(this,RegistroUsuario .class);
+
+    public void registrar(View view) {
+        Intent intent= new Intent(this,RegistroUsuario.class);
         this.startActivity(intent);
     }
 }
