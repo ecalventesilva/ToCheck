@@ -40,6 +40,7 @@
         android:layout_width="298dp"
         android:layout_height="51dp"
         android:backgroundTint="@color/colorPrimary"
+        android:onClick="pantallaUsuarios"
         android:text="Trabajadores Activos"
         android:textColor="@color/colorBlanco"
         app:layout_constraintBottom_toTopOf="@+id/buttonMapaEmpleados"

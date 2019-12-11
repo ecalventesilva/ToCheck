@@ -17,7 +17,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".InfoUsuarios"></activity>
+
+        <activity android:name=".ColsultaUsuario"></activity>
+
         <activity android:name=".Preferencias" />
         <activity android:name=".PantallaCalendario" />
         <!--

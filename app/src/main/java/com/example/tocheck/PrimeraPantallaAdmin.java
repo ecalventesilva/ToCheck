@@ -23,4 +23,8 @@ public class PrimeraPantallaAdmin extends AppCompatActivity {
         Intent intent = new Intent(this, Mapa.class);
         this.startActivity(intent);
     }
+    public void pantallaUsuarios(View view) {
+        Intent intent = new Intent(this, ColsultaUsuario.class);
+        this.startActivity(intent);
+    }
 }
