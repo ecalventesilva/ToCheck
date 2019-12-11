@@ -29,7 +29,6 @@ public class PantallaQR extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_qr);
-
         iniciarComponentes();
         clickButton();
     }
@@ -49,7 +48,6 @@ public class PantallaQR extends AppCompatActivity {
         }else{
         String texto= editText.getText().toString();
         MultiFormatWriter multiFormatWriter =new MultiFormatWriter();
-
         try{
             BitMatrix bitMatrix = multiFormatWriter.encode(texto, BarcodeFormat.QR_CODE,200,200);
             BarcodeEncoder barcodeEncoder= new BarcodeEncoder();
@@ -62,7 +60,6 @@ public class PantallaQR extends AppCompatActivity {
     }
 
     public void ocultarTecladoMovil() {
-
         View view=this.getCurrentFocus();
         if(view!=null){
             InputMethodManager imm=(InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -74,7 +71,5 @@ public class PantallaQR extends AppCompatActivity {
         editText=(EditText) findViewById(R.id.editText3);
         buttonGenerarQR=(Button) findViewById(R.id.buttonGenerarQR);
         imagenQR=(ImageView) findViewById(R.id.imagenQR);
-
-
     }
 }

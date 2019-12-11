@@ -29,13 +29,11 @@ public class RegistroUsuario extends AppCompatActivity {
     private Button buttonRegistrar;
     private EditText editTextEmail;
     private EditText editTextDni;
-
     private String nombre="";
     private String password="";
     private String rpassword="";
     private String email="";
     private String dni="";
-
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
 
@@ -44,9 +42,8 @@ public class RegistroUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
 
-
         mAuth=FirebaseAuth.getInstance();
-       mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         editTextNombre=(EditText) findViewById(R.id.editTextNombre);
         editTextPass=(EditText) findViewById(R.id.editTextPass);

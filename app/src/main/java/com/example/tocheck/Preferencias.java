@@ -26,8 +26,6 @@ public class Preferencias extends PreferenceActivity {
         super.onCreate(savedInstanceState);
         button=findViewById(R.id.button2);
         addPreferencesFromResource(R.xml.preferencias);
-
-
     }
 
     public void preferenciaCambiarFondo(Boolean valor){
@@ -44,11 +42,10 @@ public class Preferencias extends PreferenceActivity {
     public static boolean getBoolean(Context context, final String key, final boolean defaultValue){
         SharedPreferences shaPre= PreferenceManager.getDefaultSharedPreferences(context);
         return shaPre.getBoolean("fondoActivado",true);
-
     }
 
-
-   /* public static void setBoolean(Context context, final String key, final boolean value){
+    /*
+    public static void setBoolean(Context context, final String key, final boolean value){
         SharedPreferences shaPre=PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = shaPre.edit();
         editor.putBoolean(key,value);
@@ -57,5 +54,6 @@ public class Preferencias extends PreferenceActivity {
 
     public static String getKeyNombre() {
         return KEY_NOMBRE;
-    }*/
+    }
+    */
 }

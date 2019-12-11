@@ -22,29 +22,24 @@ public class InicioUsuario extends AppCompatActivity {
     private EditText editTextPassword;
     private Button buttonLogin;
     private TextView textViewRegistro;
-
     private String email="";
     private String password="";
-
     private FirebaseAuth mAuth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_usuario);
-
         editTextUsuario=(EditText) findViewById(R.id.editTextUsuario);
         editTextPassword=(EditText) findViewById(R.id.editTextPassword);
         buttonLogin=(Button) findViewById(R.id.buttonLogin);
         textViewRegistro=(TextView) findViewById(R.id.textViewRegistro);
-
         mAuth= FirebaseAuth.getInstance();
     }
+
     public void pasarPantallaPrimeraUsuario(View view) {
         email=editTextUsuario.getText().toString();
         password=editTextPassword.getText().toString();
-
         if(!email.isEmpty()&&!password.isEmpty()){
             loginUsuario();
         }else{
@@ -67,8 +62,6 @@ public class InicioUsuario extends AppCompatActivity {
             }
         });
     }
-
-
 
     public void registrar(View view) {
         Intent intent= new Intent(this,RegistroUsuario.class);

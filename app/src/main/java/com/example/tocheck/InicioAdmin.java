@@ -20,35 +20,30 @@ public class InicioAdmin extends AppCompatActivity {
 private String email="";
 private String contraseña="";
 private EditText textoEmail;
-    private EditText textoContraseña;
-    private Button botonLogin;
- private FirebaseAuth maAuth;
+private EditText textoContraseña;
+private Button botonLogin;
+private FirebaseAuth maAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_admin);
 
-textoEmail=findViewById(R.id.textoUsuarioAdmin);
-textoContraseña=findViewById(R.id.textoContraseñaAdmin);
-botonLogin=findViewById(R.id.botonLoginAdmin);
-
-maAuth= FirebaseAuth.getInstance();
+        textoEmail=findViewById(R.id.textoUsuarioAdmin);
+        textoContraseña=findViewById(R.id.textoContraseñaAdmin);
+        botonLogin=findViewById(R.id.botonLoginAdmin);
+        maAuth= FirebaseAuth.getInstance();
     }
 
     public void PantallaInicioAdmin(View view) {
         email=textoEmail.getText().toString();
         contraseña=textoContraseña.getText().toString();
-if(!email.isEmpty()&& !contraseña.isEmpty()){
-
-    loginAdmin();
-
-}else {
-    Toast.makeText(this, "El usuario o la contraseña esta vacío", Toast.LENGTH_SHORT).show();
-}
-
-
+    if(!email.isEmpty()&& !contraseña.isEmpty()){
+        loginAdmin();
+    }else {
+        Toast.makeText(this, "El usuario o la contraseña esta vacío", Toast.LENGTH_SHORT).show();
     }
 
+    }
     private void loginAdmin() {
         maAuth.signInWithEmailAndPassword(email,contraseña).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -63,6 +58,4 @@ if(!email.isEmpty()&& !contraseña.isEmpty()){
             }
 });
     }
-
-
 }

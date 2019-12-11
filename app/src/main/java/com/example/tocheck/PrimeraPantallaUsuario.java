@@ -28,6 +28,7 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
     private Intent intentCamara;
     private static final int RESULT_CODE_OPEN=1;
     private String[] permisos={CAMERA};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,14 +64,12 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
         builder.setMessage(result.getText());
         AlertDialog alertDialog=builder.create();
         alertDialog.show();
-
         miScannerView.resumeCameraPreview(this);
     }
 
     public void IrPantallaCalendario(View view) {
        Intent PAgenda =new Intent(this,PantallaCalendario.class);
        this.startActivity(PAgenda);
-
     }
 
     public void webHora(View view) {
@@ -86,11 +85,9 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
 
     public void irAgenda(View view) {
         long calendarId = 1234;
-
         final Intent calIntent = new Intent(Intent.ACTION_EDIT)
                 .setType("vnd.android.cursor.item/event")
                 .putExtra(CalendarContract.Events.CALENDAR_ID, calendarId);
-
         startActivityForResult(calIntent, RESULT_CODE_OPEN);
     }
 }

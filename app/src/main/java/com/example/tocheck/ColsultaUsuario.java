@@ -26,6 +26,7 @@ private UsuarioAdapters usuarioAdapters;
 private RecyclerView recyclerView;
 private ArrayList<Usuario> mUsuarios=new ArrayList<>();
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colsulta_usuario);
@@ -33,8 +34,8 @@ private ArrayList<Usuario> mUsuarios=new ArrayList<>();
         databaseReference = FirebaseDatabase.getInstance().getReference();
         recyclerView=findViewById(R.id.RecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         databaseReference.child("usuario").addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
             if(dataSnapshot.exists()){
@@ -66,7 +67,7 @@ databaseReference.child("Usuario").addValueEventListener(new ValueEventListener(
                 String dni=ds.child("dni").getValue().toString();
             mUsuarios.add(new Usuario(nombre,email,dni));
             }
-usuarioAdapters=new UsuarioAdapters(mUsuarios,R.layout.usuario_lista);
+            usuarioAdapters=new UsuarioAdapters(mUsuarios,R.layout.usuario_lista);
             recyclerView.setAdapter(usuarioAdapters);
         }else{
             Toast.makeText(ColsultaUsuario.this, "Error ", Toast.LENGTH_SHORT).show();

@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //preferencias=findViewById(R.id.button2);
-
     }
 
     public void accederUsuario(View view) {

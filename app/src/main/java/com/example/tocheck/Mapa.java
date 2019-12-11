@@ -24,9 +24,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Google
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa);
-
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
@@ -36,20 +34,19 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Google
         mapa.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         mapa.getUiSettings().setZoomControlsEnabled(false);
         mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(malaga, 15));
-
         mapa.addMarker(new MarkerOptions()
                 .position(malaga)
                 .title("X")
                 .snippet("Oficina")
                 .icon(BitmapDescriptorFactory
-                        .fromResource(android.R.drawable.ic_menu_compass))
+                .fromResource(android.R.drawable.ic_menu_compass))
                 .anchor(0.5f, 0.5f));
         mapa.setOnMapClickListener(this);
         if (ActivityCompat.checkSelfPermission(this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION) ==
                 PackageManager.PERMISSION_GRANTED) {
-            mapa.setMyLocationEnabled(true);
-            mapa.getUiSettings().setCompassEnabled(true);
+                mapa.setMyLocationEnabled(true);
+                mapa.getUiSettings().setCompassEnabled(true);
         }
     }
 
