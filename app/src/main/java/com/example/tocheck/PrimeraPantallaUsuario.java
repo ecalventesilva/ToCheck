@@ -35,11 +35,10 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
         setContentView(R.layout.activity_primera_pantalla_usuario);
 
     }
-
+    //FUNCION DEL BOTON ESCANEAR
     public void botonEscanear(View view) {
-
+        //SI LOS PERMISOS DE LA CAMARA ESTAN ACTIVADOS, ACTIVA LA PAGINA CON EL ESCANER
         if(ActivityCompat.checkSelfPermission(this,CAMERA)== PackageManager.PERMISSION_GRANTED){
-
             Intent intentCamara = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             miScannerView= new ZXingScannerView(this);
             setContentView(miScannerView);
@@ -47,6 +46,7 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
             miScannerView.startCamera();
 
         }else{
+            //SI LOS PERMISOS NO ESTAN ACTIVADOS PREGUNTA PARA ACEPTARLOS O DENEGARLOS
             if(ActivityCompat.shouldShowRequestPermissionRationale(this, CAMERA)){
                 ActivityCompat.requestPermissions(this,permisos,SOLICITUD_PERMISO_CAMARA);
             }else{
@@ -66,23 +66,26 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
         alertDialog.show();
         miScannerView.resumeCameraPreview(this);
     }
-
+    //FUNCION QUE LLEVA A LA PANTALLA CALENDARIO
     public void IrPantallaCalendario(View view) {
        Intent PAgenda =new Intent(this,PantallaCalendario.class);
        this.startActivity(PAgenda);
     }
 
+    //MUESTRA LA HORA EN UNA WEB
     public void webHora(View view) {
         Uri uri = Uri.parse("https://reloj-alarma.es/hora/");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }
 
+    //CONSULTA DE LOS USUARIOS
     public void infoUsuarios(View view) {
         Intent intent= new Intent(this,ColsultaUsuario.class);
         this.startActivity(intent);
     }
 
+    //FUNCION QUE LLEVA A LA AGENDA
     public void irAgenda(View view) {
         long calendarId = 1234;
         final Intent calIntent = new Intent(Intent.ACTION_EDIT)

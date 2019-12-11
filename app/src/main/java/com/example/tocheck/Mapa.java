@@ -20,6 +20,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Google
     private GoogleMap mapa;
     private final LatLng malaga = new LatLng(36.7201600, -4.4203400);
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Google
         mapFragment.getMapAsync(this);
     }
 
+    //CUANDO EL MAPA ESTE LISTO, ESTABLECE TODAS LAS VARIABLES REFERENTES AL MAPA
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mapa = googleMap;
@@ -49,20 +51,20 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback, Google
                 mapa.getUiSettings().setCompassEnabled(true);
         }
     }
-
+    //FUNCION AL MOVER LA CAMARA
     public void moveCamera(View view) {
         mapa.moveCamera(CameraUpdateFactory.newLatLng(malaga));
     }
-
+    //FUNCION DE LA ANIMACION DE LA CAMARA
     public void animateCamera(View view) {
         mapa.animateCamera(CameraUpdateFactory.newLatLng(malaga));
     }
-
+    //FUNCION AÑADIR MARCADOR
     public void addMarker(View view) {
         mapa.addMarker(new MarkerOptions().position(
                 mapa.getCameraPosition().target));
     }
-
+    //FUNCION CLIC EN MAPA
     @Override
     public void onMapClick(LatLng puntoPulsado) {
         mapa.addMarker(new MarkerOptions().position(puntoPulsado)

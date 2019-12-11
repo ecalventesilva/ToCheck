@@ -17,7 +17,6 @@ import android.widget.Button;
 //Aún sin terminar...
 
 public class Preferencias extends PreferenceActivity {
-
     private static final String KEY_NOMBRE="fondoActivado";
     private Button button;
     private Boolean valorFondoActivado = true;
@@ -27,18 +26,18 @@ public class Preferencias extends PreferenceActivity {
         button=findViewById(R.id.button2);
         addPreferencesFromResource(R.xml.preferencias);
     }
-
+    //PREFERENCIA PARA CAMBIAR EL FONDO A MODO OSCURO
     public void preferenciaCambiarFondo(Boolean valor){
 
         if(valorFondoActivado){
+            //SI EL FONDO ESTA ACTIVO, EL COLOR DE FONDO SE ESTABLECE A NEGRO
             button.setBackgroundResource(R.color.colorNegro);
-
         }else{
             button.setBackgroundResource(R.color.colorNegro);
         }
     }
 
-
+    //FUNCION QUE DEVUELVE UN BOOLEAN (TRUE -> FONDO ACTIVADO      FALSE-> FONDO DESACTIVADO)
     public static boolean getBoolean(Context context, final String key, final boolean defaultValue){
         SharedPreferences shaPre= PreferenceManager.getDefaultSharedPreferences(context);
         return shaPre.getBoolean("fondoActivado",true);
