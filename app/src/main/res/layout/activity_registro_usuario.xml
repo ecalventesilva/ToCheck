@@ -115,18 +115,18 @@
                 android:inputType="textPassword" />
 
             <EditText
-                android:id="@+id/editTextDni"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
-
-            <EditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/editTextDni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
         </LinearLayout>
     </LinearLayout>

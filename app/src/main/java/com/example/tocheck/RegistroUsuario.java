@@ -17,41 +17,51 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class RegistroUsuario extends AppCompatActivity {
 
     private EditText editTextNombre;
-    private EditText editTextRPass;
     private EditText editTextPass;
+    private EditText editTextPassword;
     private Button buttonRegistrar;
-
+    private EditText editTextEmail;
+    private EditText editTextDni;
 
     private String nombre="";
     private String password="";
     private String rpassword="";
+    private String email="";
+    private String dni="";
 
     FirebaseAuth mAuth;
     DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usuario);
 
-        mAuth=FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        editTextNombre=(EditText) findViewById(R.id.editTextPassword);
-        editTextPass=(EditText) findViewById(R.id.editTextPassword);
-        editTextRPass=(EditText) findViewById(R.id.editTextPassword);
+        mAuth=FirebaseAuth.getInstance();
+       mDatabase = FirebaseDatabase.getInstance().getReference();
+
+        editTextNombre=(EditText) findViewById(R.id.editTextNombre);
+        editTextPass=(EditText) findViewById(R.id.editTextPass);
+        editTextPassword=(EditText) findViewById(R.id.editTextPassword);
         buttonRegistrar=(Button) findViewById(R.id.botonRegistrar);
+        editTextEmail=(EditText) findViewById(R.id.editTextEmail);
+        editTextDni=(EditText) findViewById(R.id.editTextDni);
     }
 
     public void buttonRegistrar(View view) {
         nombre=editTextNombre.getText().toString();
         password=editTextPass.getText().toString();
-        rpassword=editTextRPass.getText().toString();
+        rpassword=editTextPassword.getText().toString();
+        email=editTextEmail.getText().toString();
+        dni=editTextDni.getText().toString();
         
         if(!nombre.isEmpty()&&!password.isEmpty()&&!rpassword.isEmpty()){
 
@@ -66,11 +76,11 @@ public class RegistroUsuario extends AppCompatActivity {
         else{
             Toast.makeText(this, "Por favor, complete los campos.", Toast.LENGTH_SHORT).show();
         }
-        startActivity(new Intent(RegistroUsuario.this,InicioUsuario.class));
+
     }
 
     private void registrarUsuario() {
-        mAuth.createUserWithEmailAndPassword(nombre,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                if(task.isSuccessful()){
@@ -79,6 +89,8 @@ public class RegistroUsuario extends AppCompatActivity {
                    map.put("nombre",nombre);
                    map.put("password",password);
                    map.put("rpassword",rpassword);
+                   map.put("email",email);
+                   map.put("dni",dni);
 
                    String id = mAuth.getCurrentUser().getUid();
                    mDatabase.child("Usuario").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
