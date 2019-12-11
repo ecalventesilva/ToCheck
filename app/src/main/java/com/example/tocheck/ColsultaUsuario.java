@@ -69,7 +69,7 @@ databaseReference.child("Usuario").addValueEventListener(new ValueEventListener(
 usuarioAdapters=new UsuarioAdapters(mUsuarios,R.layout.usuario_lista);
             recyclerView.setAdapter(usuarioAdapters);
         }else{
-            Toast.makeText(ColsultaUsuario.this, "Erros ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ColsultaUsuario.this, "Error ", Toast.LENGTH_SHORT).show();
         }
     }
 

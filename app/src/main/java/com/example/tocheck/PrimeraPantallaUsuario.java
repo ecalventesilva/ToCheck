@@ -37,8 +37,6 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
 
     public void botonEscanear(View view) {
 
-         //IMPLEMENTAR CORRECTAMENTE PERMISOS DE CAMARA
-
         if(ActivityCompat.checkSelfPermission(this,CAMERA)== PackageManager.PERMISSION_GRANTED){
 
             Intent intentCamara = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -70,15 +68,9 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
     }
 
     public void IrPantallaCalendario(View view) {
-       // Intent PAgenda =new Intent(this,PantallaCalendario.class);
-        //this.startActivity(PAgenda);
-        long calendarId = 1234; // here goes your calendar Id
+       Intent PAgenda =new Intent(this,PantallaCalendario.class);
+       this.startActivity(PAgenda);
 
-        final Intent calIntent = new Intent(Intent.ACTION_EDIT)
-                .setType("vnd.android.cursor.item/event")
-                .putExtra(CalendarContract.Events.CALENDAR_ID, calendarId);
-
-        startActivityForResult(calIntent, RESULT_CODE_OPEN);
     }
 
     public void webHora(View view) {
@@ -88,7 +80,17 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
     }
 
     public void infoUsuarios(View view) {
-        Intent intent= new Intent(this,InfoUsuarios.class);
+        Intent intent= new Intent(this,ColsultaUsuario.class);
         this.startActivity(intent);
+    }
+
+    public void irAgenda(View view) {
+        long calendarId = 1234;
+
+        final Intent calIntent = new Intent(Intent.ACTION_EDIT)
+                .setType("vnd.android.cursor.item/event")
+                .putExtra(CalendarContract.Events.CALENDAR_ID, calendarId);
+
+        startActivityForResult(calIntent, RESULT_CODE_OPEN);
     }
 }

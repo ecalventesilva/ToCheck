@@ -43,7 +43,7 @@ if(!email.isEmpty()&& !contraseña.isEmpty()){
     loginAdmin();
 
 }else {
-    Toast.makeText(this, "El usuario o la contraseña esta vacio", Toast.LENGTH_SHORT).show();
+    Toast.makeText(this, "El usuario o la contraseña esta vacío", Toast.LENGTH_SHORT).show();
 }
 
 
@@ -56,6 +56,7 @@ if(!email.isEmpty()&& !contraseña.isEmpty()){
                 if(task.isSuccessful()){
                     startActivity(new Intent(InicioAdmin.this, PrimeraPantallaAdmin.class));
                     finish();
+                    Toast.makeText(InicioAdmin.this, "Bienvenido "+textoEmail.getText().toString(), Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(InicioAdmin.this, "Error, no se puedo iniciar sesión, comprube los datos ", Toast.LENGTH_SHORT).show();
                 }
