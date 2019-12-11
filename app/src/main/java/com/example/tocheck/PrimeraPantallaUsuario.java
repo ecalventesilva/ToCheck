@@ -80,4 +80,15 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
 
         startActivityForResult(calIntent, RESULT_CODE_OPEN);
     }
+
+    public void webHora(View view) {
+        Uri uri = Uri.parse("https://reloj-alarma.es/hora/");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+    }
+
+    public void infoUsuarios(View view) {
+        Intent intent= new Intent(this,InfoUsuarios.class);
+        this.startActivity(intent);
+    }
 }

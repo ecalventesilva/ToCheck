@@ -95,37 +95,42 @@
 
             <EditText
                 android:id="@+id/editTextNombre"
-                android:layout_width="wrap_content"
+                android:layout_width="223dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="Introduzca su nombre"
                 android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/editTextPass"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
+                android:layout_width="223dp"
+                android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="Introduzca una contraseña"
                 android:inputType="textPassword" />
 
             <EditText
                 android:id="@+id/editTextPassword"
-                android:layout_width="wrap_content"
+                android:layout_width="223dp"
                 android:layout_height="42dp"
                 android:ems="10"
+                android:hint="Repita la contraseña"
                 android:inputType="textPassword" />
 
             <EditText
                 android:id="@+id/editTextEmail"
-                android:layout_width="wrap_content"
+                android:layout_width="223dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="Introduzca su email"
                 android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/editTextDni"
-                android:layout_width="wrap_content"
+                android:layout_width="223dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="Introduzca su DNI"
                 android:inputType="textPersonName" />
 
         </LinearLayout>

@@ -98,7 +98,7 @@ public class RegistroUsuario extends AppCompatActivity {
                        public void onComplete(@NonNull Task<Void> task2) {
                            if(task2.isSuccessful()){
                                startActivity(new Intent(RegistroUsuario.this,InicioUsuario.class));
-                               Toast.makeText(RegistroUsuario.this, "¡Usuario registrado con éxito!", Toast.LENGTH_SHORT).show();
+                               Toast.makeText(RegistroUsuario.this, "¡Usuario: "+editTextNombre.getText().toString()+ " registrado con éxito!", Toast.LENGTH_SHORT).show();
                                finish();
                            }
                            else{

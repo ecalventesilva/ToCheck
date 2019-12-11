@@ -23,7 +23,7 @@ public class InicioUsuario extends AppCompatActivity {
     private Button buttonLogin;
     private TextView textViewRegistro;
 
-    private String usuario="";
+    private String email="";
     private String password="";
 
     private FirebaseAuth mAuth;
@@ -34,7 +34,7 @@ public class InicioUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_usuario);
 
-        editTextUsuario=(EditText) findViewById(R.id.editTextPassword);
+        editTextUsuario=(EditText) findViewById(R.id.editTextUsuario);
         editTextPassword=(EditText) findViewById(R.id.editTextPassword);
         buttonLogin=(Button) findViewById(R.id.buttonLogin);
         textViewRegistro=(TextView) findViewById(R.id.textViewRegistro);
@@ -42,10 +42,10 @@ public class InicioUsuario extends AppCompatActivity {
         mAuth= FirebaseAuth.getInstance();
     }
     public void pasarPantallaPrimeraUsuario(View view) {
-        usuario=editTextUsuario.getText().toString();
+        email=editTextUsuario.getText().toString();
         password=editTextPassword.getText().toString();
 
-        if(!usuario.isEmpty()&&!password.isEmpty()){
+        if(!email.isEmpty()&&!password.isEmpty()){
             loginUsuario();
         }else{
             Toast.makeText(this,"Por favor, rellene los campos.",Toast.LENGTH_LONG).show();
@@ -53,12 +53,13 @@ public class InicioUsuario extends AppCompatActivity {
     }
 
     private void loginUsuario() {
-        mAuth.signInWithEmailAndPassword(usuario,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     startActivity(new Intent(InicioUsuario.this,PrimeraPantallaUsuario.class));
                     finish();
+                    Toast.makeText(InicioUsuario.this,"Bienvenido "+editTextUsuario.getText().toString(),Toast.LENGTH_LONG).show();
                 }
                 else{
                     Toast.makeText(InicioUsuario.this,"Error, no se pudo iniciar sesión. Por favor, revise los campos.",Toast.LENGTH_LONG).show();
