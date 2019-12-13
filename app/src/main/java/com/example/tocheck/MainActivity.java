@@ -1,21 +1,32 @@
 package com.example.tocheck;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private Preferencias pref;
+    private ConstraintLayout main;
 
-   // private Button preferencias;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //preferencias=findViewById(R.id.button2);
+        main=findViewById(R.id.main);
+
+
+        pref=new Preferencias();
+        if(pref.getBoolean(this,"fondoActivado",true)){
+            main.setBackgroundResource(R.color.colorNegro);
+
+        }else{
+            main.setBackgroundResource(R.color.colorBlanco);
+
+        }
     }
 
     public void accederUsuario(View view) {

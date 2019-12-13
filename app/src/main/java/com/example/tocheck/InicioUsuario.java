@@ -2,8 +2,10 @@ package com.example.tocheck;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,8 +18,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class InicioUsuario extends AppCompatActivity {
+import static com.example.tocheck.R.color.colorBlanco;
+import static com.example.tocheck.R.color.colorNegro;
 
+public class InicioUsuario extends AppCompatActivity {
+    private Preferencias pref;
     private EditText editTextUsuario;
     private EditText editTextPassword;
     private Button buttonLogin;
@@ -25,6 +30,10 @@ public class InicioUsuario extends AppCompatActivity {
     private String email="";
     private String password="";
     private FirebaseAuth mAuth;
+    private ConstraintLayout constInicioUsuario;
+    private TextView textViewEmail;
+    private TextView textView2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,28 @@ public class InicioUsuario extends AppCompatActivity {
         buttonLogin=(Button) findViewById(R.id.buttonLogin);
         textViewRegistro=(TextView) findViewById(R.id.textViewRegistro);
         mAuth= FirebaseAuth.getInstance();
+        constInicioUsuario=findViewById(R.id.constInicioUsuario);
+        textViewEmail=findViewById(R.id.textViewEmail);
+        textView2=findViewById(R.id.textView2);
+
+        pref=new Preferencias();
+        if(pref.getBoolean(this,"fondoActivado",true)){
+
+            constInicioUsuario.setBackgroundResource(R.color.colorNegro);
+            textViewEmail.setTextColor(getResources().getColor(colorBlanco));
+            textView2.setTextColor(getResources().getColor(colorBlanco));
+            editTextUsuario.setBackgroundResource(colorBlanco);
+            editTextPassword.setBackgroundResource(colorBlanco);
+            textViewRegistro.setTextColor(getResources().getColor(colorBlanco));
+        }else{
+            textViewEmail.setTextColor(getResources().getColor(colorNegro));
+            textView2.setTextColor(getResources().getColor(colorNegro));
+            editTextUsuario.setBackgroundResource(colorBlanco);
+            editTextPassword.setBackgroundResource(colorBlanco);
+            textViewRegistro.setTextColor(getResources().getColor(colorBlanco));
+            constInicioUsuario.setBackgroundResource(colorBlanco);
+        }
+
     }
 
     public void pasarPantallaPrimeraUsuario(View view) {

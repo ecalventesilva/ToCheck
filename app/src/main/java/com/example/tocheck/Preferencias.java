@@ -14,8 +14,6 @@ import android.view.View;
 import android.widget.Button;
 
 
-//Aún sin terminar...
-
 public class Preferencias extends PreferenceActivity {
     private static final String KEY_NOMBRE="fondoActivado";
     private Button button;
@@ -27,7 +25,7 @@ public class Preferencias extends PreferenceActivity {
         addPreferencesFromResource(R.xml.preferencias);
     }
     //PREFERENCIA PARA CAMBIAR EL FONDO A MODO OSCURO
-    public void preferenciaCambiarFondo(Boolean valor){
+   /* public void preferenciaCambiarFondo(Boolean valor){
 
         if(valorFondoActivado){
             //SI EL FONDO ESTA ACTIVO, EL COLOR DE FONDO SE ESTABLECE A NEGRO
@@ -35,24 +33,21 @@ public class Preferencias extends PreferenceActivity {
         }else{
             button.setBackgroundResource(R.color.colorNegro);
         }
-    }
+    }*/
 
     //FUNCION QUE DEVUELVE UN BOOLEAN (TRUE -> FONDO ACTIVADO      FALSE-> FONDO DESACTIVADO)
-    public static boolean getBoolean(Context context, final String key, final boolean defaultValue){
+    public boolean getBoolean(Context context, final String key, final boolean defaultValue){
         SharedPreferences shaPre= PreferenceManager.getDefaultSharedPreferences(context);
-        return shaPre.getBoolean("fondoActivado",true);
+        return shaPre.getBoolean("fondoActivado",false);
     }
 
-    /*
-    public static void setBoolean(Context context, final String key, final boolean value){
-        SharedPreferences shaPre=PreferenceManager.getDefaultSharedPreferences(context);
-        SharedPreferences.Editor editor = shaPre.edit();
-        editor.putBoolean(key,value);
-        editor.commit();
-    }
 
-    public static String getKeyNombre() {
-        return KEY_NOMBRE;
+
+    @Override
+    public void onBackPressed() {
+        Intent i=new Intent(this, MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        super.onBackPressed();
     }
-    */
 }

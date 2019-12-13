@@ -1,6 +1,7 @@
 package com.example.tocheck;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 
 import android.app.AlertDialog;
@@ -20,6 +21,8 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 import static android.Manifest.permission.CALL_PHONE;
 import static android.Manifest.permission.CAMERA;
+import static com.example.tocheck.R.color.colorBlanco;
+import static com.example.tocheck.R.color.colorNegro;
 
 public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
@@ -28,12 +31,22 @@ public class PrimeraPantallaUsuario extends AppCompatActivity implements ZXingSc
     private Intent intentCamara;
     private static final int RESULT_CODE_OPEN=1;
     private String[] permisos={CAMERA};
+    private Preferencias pref;
+    private ConstraintLayout constPrimeraPantallaUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primera_pantalla_usuario);
 
+        //ERROR AL EJECUTAR LA APP CON LAS PREFERENCIAS ACTIVADAS
+/*
+        pref=new Preferencias();
+        if(pref.getBoolean(this,"fondoActivado",true)){
+            constPrimeraPantallaUsuario.setBackgroundResource(R.color.colorNegro);
+        }else{
+            constPrimeraPantallaUsuario.setBackgroundResource(colorBlanco);
+        }*/
     }
     //FUNCION DEL BOTON ESCANEAR
     public void botonEscanear(View view) {
