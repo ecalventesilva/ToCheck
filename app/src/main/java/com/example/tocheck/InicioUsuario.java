@@ -62,7 +62,7 @@ public class InicioUsuario extends AppCompatActivity {
             textView2.setTextColor(getResources().getColor(colorNegro));
             editTextUsuario.setBackgroundResource(colorBlanco);
             editTextPassword.setBackgroundResource(colorBlanco);
-            textViewRegistro.setTextColor(getResources().getColor(colorBlanco));
+            textViewRegistro.setTextColor(getResources().getColor(colorNegro));
             constInicioUsuario.setBackgroundResource(colorBlanco);
         }
 
